@@ -1,5 +1,5 @@
 
-import { API_URL } from "../app/(home)/page";
+import {API_URL} from "./../constants";
 export async function getMovies(id:string){
     console.log(`fetching movie ${Date.now()}`)
     await new Promise((resolve) => setTimeout(resolve, 1000));

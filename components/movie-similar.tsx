@@ -1,4 +1,4 @@
-import { API_URL } from "../app/(home)/page";
+import {API_URL} from "./../constants";
 async function getSimilars(id:string){
     console.log(`fetching similar ${Date.now()}`)
     await new Promise((resolve) => setTimeout(resolve, 1000));
