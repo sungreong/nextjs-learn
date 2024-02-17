@@ -20,8 +20,10 @@
 // }
 
 import Link from "next/link";
-
+import Movie from "../../components/movie";
 export const API_URL = 'https://nomad-movies.nomadcoders.workers.dev/movies';
+import styles from "./../../styles/home.module.css";
+
 
 export const metadata = {
   title: 'Home',
@@ -36,12 +38,26 @@ async function getMovies() {
 
 export default async function HomePage() {
   const movies = await getMovies();
-  return <div>
+  return <div className={styles.container}>
     {
+    
       movies.map(movie => (
-        <li key={movie.id}>
-          <Link href={`/movies/${movie.id}`} key={movie.id}>{movie.title}</Link>
-        </li>
+        // <li key={movie.id}>
+        //   <Link href={`/movies/${movie.id}`} key={movie.id}>{movie.title}</Link>
+        // </li>
+
+        // <div key={movie.id}>
+        //   <img src={movie.poster_path} alt={movie.title} />
+        //   <Link href={`/movies/${movie.id}`} key={movie.id}>{movie.title}</Link>
+        // </div>
+        <Movie 
+        key={movie.id}
+        id = {movie.id}
+        title = {movie.title}
+        poster_path = {movie.poster_path}
+        release_date = {movie.release_date}
+        />
+
       ))
     }
   </div>
