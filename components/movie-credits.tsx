@@ -1,7 +1,7 @@
 import {API_URL} from "./../constants";
 async function getCredits(id:string){
     console.log(`fetching credit ${Date.now()}`)
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    // await new Promise((resolve) => setTimeout(resolve, 1000));
     // throw new Error('error');
     const response = await fetch(`${API_URL}/${id}/credits`);
     return response.json();
